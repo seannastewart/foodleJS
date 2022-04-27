@@ -6,11 +6,15 @@ let randomWord = wordList[Math.floor(Math.random() * wordList.length)];
 let answer = randomWord.toUpperCase()
 
 const form = document.querySelector('form');
+const icon = document.querySelector('i');
+const cancel = document.querySelector('#close')
+const instructions = document.querySelector("#howTo")
 const input = document.querySelector('#guess')
 const guessContainer = document.querySelector('#guessContainer')
+const gameContainer = document.querySelector('#gameContainer')
 const resultsContainer = document.querySelector('#resultsContainer')
 const replay = document.querySelector('#replay')
-const resultsText = document.querySelector('h2');
+const resultsText = document.querySelector('#result');
 const answerReveal = document.querySelector('h3');
 
 let guessNumber = 0;
@@ -82,6 +86,7 @@ wordle.compare = function (array, word) {
     }
 
     if (guessNumber === 6 && word !== answer) {
+        console.log('lose')
         resultsText.textContent = "Game Over"
         wordle.endGame()
 
@@ -95,18 +100,7 @@ wordle.endGame = function () {
     replay.classList.remove('hide')
     guessNumber = 0
 
-    // replay.addEventListener('click', function () {
-    //     // event.preventDefault();
-    //     console.log('click')
-    //     form.classList.remove('hide')
-    //     replay.classList.add('hide')
-    //     answer = wordList[Math.floor(Math.random() * wordList.length)];
 
-    //     guessContainer.textContent = ''
-    //     resultsText.textContent = ''
-    //     wordle.setGameBoard()
-
-    // })
 
 }
 
@@ -123,6 +117,22 @@ wordle.setGameBoard = function () {
 
         guessContainer.appendChild(row)
     }
+    icon.addEventListener('click', function () {
+        console.log('clicked icon')
+        instructions.classList.toggle('hide')
+        gameContainer.classList.toggle('hide')
+
+
+    })
+    cancel.addEventListener('click', function () {
+        console.log('clicked icon')
+        instructions.classList.add('hide')
+        gameContainer.classList.remove('hide')
+
+
+    })
+
+
     wordle.getGuess()
 }
 

@@ -243,6 +243,8 @@ html {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    position: relative;
+    height: 100vh;
 }
 
 *,
@@ -266,8 +268,9 @@ html {
 
 body {
     font-family: sans-serif;
-    min-height: 100vh;
-    position: relative;
+    /* min-height: 100vh; */
+    max-height: 100vh;
+    /* position: relative; */
 }
 
 header {
@@ -275,6 +278,38 @@ header {
     font-weight: bold;
     font-family: times, "Times New Roman";
     font-size: 30px;
+
+}
+
+header .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+h1 {
+    margin-bottom: 0;
+    cursor: pointer;
+    width: 250px;
+}
+
+h1:hover+p {
+    opacity: 1;
+}
+
+header p {
+    font-size: 16px;
+    margin-top: 0;
+}
+
+.wrapper {
+    max-width: 1260px;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+
 }
 
 form {
@@ -356,6 +391,9 @@ button:focus {
     display: none
 }
 
+.invis {
+    opacity: 0;
+}
 
 
 .guessContainer {
@@ -398,12 +436,61 @@ button:focus {
     padding: 4%;
 }
 
-footer {
+.howTo {
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 1% 2%;
+    position: relative;
+    width: 50%;
+
+
+}
+
+.close {
+    position: absolute;
+    left: 10px;
+    font-weight: 500;
+    margin: 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.close:hover {
+    font-weight: 700;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.greenText {
+    background-color: green;
+}
+
+.yellowText {
+    background-color: rgb(232, 192, 14);
+}
+
+.greyText {
+    background-color: grey;
+}
+
+.howTo span {
+    color: white;
+    padding: 1%;
+    border-radius: 3px;
+}
+
+/* footer {
     border-top: 1px solid black;
     position: absolute;
     bottom: 0;
     text-align: center;
     width: 100%;
+
 }
 
 footer p {
@@ -411,11 +498,16 @@ footer p {
     text-align: center;
     padding: 2px;
 
-
-
-}
+} */
 
 a {
     color: black;
     text-decoration: none;
+}
+
+i {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    cursor: pointer;
 }

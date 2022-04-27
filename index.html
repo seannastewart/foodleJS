@@ -5,33 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
+    <link rel="icon" type="image/x-icon" href="./assets/burger-solid.svg">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/df731280b9.js" crossorigin="anonymous"></script>
     <title>Foodle</title>
 </head>
 
 <body>
     <header>
-        <h1>Foodle</h1>
+        <div class="wrapper">
+            <h1>Foodle</h1>
+            <p class="createdBy, invis">Created by <a href="https://github.com/seannastewart">Seanna Stewart</a></p>
+            <i class="fa-regular fa-circle-question"></i>
+        </div>
     </header>
-    <main>
 
-        <div class="gameContainer">
-            <div class="guessContainer" id="guessContainer"></div>
-            <form action="">
-                <input type="text" name="guess" id="guess">
-                <button id="guessButton" class="submitButton">SUBMIT</button>
-            </form>
-            <div class="resultsContainer">
-                <h2></h2>
-                <h3></h3>
-                <button class="hide" id="replay" OnClick="window.location.reload();">Play Again</button>
+    <main>
+        <div class="wrapper game">
+            <div class="howTo hide" id="howTo">
+                <p class="close" id="close">X</p>
+                <h2>How to Play</h2>
+                <p>You have 6 tries to guess the five letter food word. </p>
+                <p><span class="greenText">Green</span> means the letter is in the word and in the correct spot.</p>
+                <p><span class="yellowText">Yellow</span> means the letter is in the word but in the wrong spot.</p>
+                <p><span class="greyText">Grey</span> means the word does not contain the letter.</p>
+            </div>
+            <div class="gameContainer" id="gameContainer">
+                <div class="guessContainer" id="guessContainer"></div>
+                <form action="">
+                    <input type="text" name="guess" id="guess">
+                    <button id="guessButton" class="submitButton">SUBMIT</button>
+                </form>
+                <div class="resultsContainer">
+                    <h2 id="result"></h2>
+                    <h3></h3>
+                    <button class="hide" id="replay" OnClick="window.location.reload();">Play Again</button>
+                </div>
             </div>
         </div>
     </main>
-    <footer>
-        <p>Created by <a href="https://github.com/seannastewart">Seanna Stewart</a></p>
-    </footer>
+    <!-- <footer>
+        
+    </footer> -->
 
 
     <script src="script.js"></script>
