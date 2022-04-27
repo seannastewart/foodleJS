@@ -19,7 +19,7 @@ const answerReveal = document.querySelector('h3');
 
 let guessNumber = 0;
 let remainingGuesses = 6
-console.log(guessNumber)
+
 
 wordle.getGuess = function () {
 
@@ -27,9 +27,9 @@ wordle.getGuess = function () {
         event.preventDefault();
         let guessInital = input.value
         let guess = guessInital.toUpperCase()
-        console.log(input.value)
+
         let guessArray = guess.split("")
-        console.log(guessArray)
+
         if (guessArray.length !== 5) {
             alert("Your guess must be 5 letters!")
 
@@ -50,8 +50,7 @@ wordle.compare = function (array, word) {
     wordDiv.classList.add("guessRow")
     guessnumber = (guessNumber++)
     remainingGuesses = (remainingGuesses - 1)
-    console.log(guessNumber)
-    console.log(`remaining guesses ${remainingGuesses}`)
+
 
 
 
@@ -80,13 +79,13 @@ wordle.compare = function (array, word) {
 
     }
     if (word === answer) {
-        console.log('you win')
+
         resultsText.textContent = "You Win!"
         wordle.endGame()
     }
 
     if (guessNumber === 6 && word !== answer) {
-        console.log('lose')
+
         resultsText.textContent = "Game Over"
         wordle.endGame()
 
@@ -118,14 +117,14 @@ wordle.setGameBoard = function () {
         guessContainer.appendChild(row)
     }
     icon.addEventListener('click', function () {
-        console.log('clicked icon')
+
         instructions.classList.toggle('hide')
         gameContainer.classList.toggle('hide')
 
 
     })
     cancel.addEventListener('click', function () {
-        console.log('clicked icon')
+
         instructions.classList.add('hide')
         gameContainer.classList.remove('hide')
 

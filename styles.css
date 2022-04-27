@@ -268,9 +268,7 @@ html {
 
 body {
     font-family: sans-serif;
-    /* min-height: 100vh; */
     max-height: 100vh;
-    /* position: relative; */
 }
 
 header {
@@ -364,16 +362,6 @@ button:focus {
     background-color: grey;
 }
 
-/* span {
-    color: white;
-    font-size: 35px;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 
 .gameContainer {
     display: flex;
@@ -484,21 +472,7 @@ button:focus {
     border-radius: 3px;
 }
 
-/* footer {
-    border-top: 1px solid black;
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    width: 100%;
 
-}
-
-footer p {
-    margin: 0;
-    text-align: center;
-    padding: 2px;
-
-} */
 
 a {
     color: black;
