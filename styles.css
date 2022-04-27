@@ -266,7 +266,8 @@ html {
 
 body {
     font-family: sans-serif;
-    max-height: 100vh;
+    min-height: 100vh;
+    position: relative;
 }
 
 header {
@@ -397,15 +398,20 @@ button:focus {
     padding: 4%;
 }
 
-/* footer {
-    background-color: gray;
-    position: relative;
+footer {
+    border-top: 1px solid black;
+    position: absolute;
     bottom: 0;
-} */
+    text-align: center;
+    width: 100%;
+}
 
 footer p {
     margin: 0;
     text-align: center;
+    padding: 2px;
+
+
 
 }
 
